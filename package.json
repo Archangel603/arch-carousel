@@ -1,5 +1,5 @@
 {
-  "name": "@archangel63/v-carousel",
+  "name": "@archangel63/a-carousel",
   "version": "0.2.0",
   "private": false,
   "scripts": {
@@ -12,7 +12,7 @@
     "lodash": "^4.17.11",
     "vue": "^2.5.17"
   },
-  "main": "./index.js",
+  "main": "./dist/a-carousel.common.js",
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-eslint": "^3.2.1",
@@ -26,7 +26,8 @@
   },
   "files": [
     "dist/*",
-    "package.json",
-    "index.js"
+    "src/*",
+    "*.json",
+    "*.js"
   ]
 }

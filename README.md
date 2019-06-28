@@ -2,5 +2,5 @@
 
 ## Installation
 ```
-npm i a-carousel --save
+npm i @archangel63/a-carousel --save
 ```
