@@ -80,6 +80,14 @@
                 <input id="dots" type="checkbox" v-model="options.dots" checked />
             </div>
             <div class="slider-option-container">
+                <div>Dots position</div>
+                <label for="dpos1">Slide bottom</label>
+                <input id="dpos1" type="radio" name="dotsPos" v-model="options.dotsPos" value="slideBottom" checked />
+                <br/>
+                <label for="dpos2">Under slider</label>
+                <input id="dpos2" type="radio" name="dotsPos" v-model="options.dotsPos" value="underSlider" checked />
+            </div>
+            <div class="slider-option-container">
                 <label for="#ratio">Width : height ratio</label>
                 <input id="ratio" type="text" v-model.number="options.ratio"/>
             </div>
@@ -130,7 +138,7 @@
                     ratio: 2,
                     thumbnails: "",
                     dots: true,
-                    dotsType: "",
+                    dotsType: "line",
                     dotsPos: "slideBottom",
                     minHeight: 0,
                     maxHeight: 0,

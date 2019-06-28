@@ -57,6 +57,13 @@
             </div>
 
         </div>
+        <div class="a-slider-outside-dots" v-if="dotsPos === 'underSlider'">
+            <dots   :type="dotsType"
+                    :slides="slides"
+                    :active="activeIndex"
+                    @change="changeSlide"
+            ></dots>
+        </div>
         <div class="a-slider-thumbnails" v-if="thumbnails === 'bottom'">
             <div v-for="(item, index) in slides"
                  :class="{ 'a-thumbnail': true, active: index === activeIndex }"
@@ -119,15 +126,15 @@
              */
             dotsType: {
                 type: String,
-                default: ""
+                default: "line"
             },
             /***
              * Position of dots
-             * Possible values: "aboveSlide" and "underSlider"
+             * Possible values: "slideBottom" and "underSlider"
              */
             dotsPos: {
                 type: String,
-                default: "aboveSlide"
+                default: "slideBottom"
             },
             thumbnails: {
                 type: [String],
@@ -182,6 +189,14 @@
             autoplayInterval: {
                 type: Number,
                 default: 4000
+            },
+            leftArrowSrc: {
+                type: String,
+                default: leftArrow
+            },
+            rightArrowSrc: {
+                type: String,
+                default: rightArrow
             }
         },
 
@@ -196,9 +211,7 @@
                 width: 0,
                 changeInterval: null,
                 slides: [],
-                largestSlide: null,
-                leftArrowSrc: leftArrow,
-                rightArrowSrc: rightArrow
+                largestSlide: null
             };
         },
 
@@ -562,6 +575,12 @@
                 border-color: #ddd;
             }
         }
+    }
+
+    .a-slider-outside-dots {
+        display: flex;
+        justify-content: center;
+        padding: 0.5em;
     }
 
     .a-slider-thumbnails {
