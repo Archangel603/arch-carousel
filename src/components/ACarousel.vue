@@ -79,7 +79,8 @@
 
 <script>
 
-    import { throttle, upperFirst } from "lodash";
+    import throttle from "lodash/throttle";
+    import upperFirst from "lodash/upperFirst";
     import { onSwipe } from "../utils/swipe";
     import Dots from "./ADots";
     import leftArrow from "../svg/left-arrow.svg";
