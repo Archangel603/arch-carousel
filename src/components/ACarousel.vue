@@ -338,7 +338,7 @@
         },
 
         destroyed() {
-            window.removeEventListener("onResize", this.onResize);
+            window.removeEventListener("resize", this.onResize);
         },
 
         //#endregion
