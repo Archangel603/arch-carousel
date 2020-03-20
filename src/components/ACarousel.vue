@@ -57,7 +57,7 @@
             </div>
 
         </div>
-        <div class="a-slider-outside-dots" v-if="dotsPos === 'underSlider'">
+        <div class="a-slider-outside-dots" v-if="dots && dotsPos === 'underSlider'">
             <dots   :type="dotsType"
                     :slides="slides"
                     :active="activeIndex"
