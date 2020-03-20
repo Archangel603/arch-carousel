@@ -198,6 +198,14 @@
             rightArrowSrc: {
                 type: String,
                 default: rightArrow
+            },
+            remAdaptation: {
+                type: Boolean,
+                default: false
+            },
+            remBase: {
+                type: Number,
+                default: 16
             }
         },
 
@@ -298,9 +306,17 @@
             },
 
             sliderStyles() {
-                return {
-                    height: this.height + "px"
-                };
+                
+                let height = this.height;
+                
+                if (this.remAdaptation) {
+                    height = (height / this.remBase) + "rem";
+                }
+                else {
+                    height += "px";
+                }
+                
+                return { height };
             }
         },
 
