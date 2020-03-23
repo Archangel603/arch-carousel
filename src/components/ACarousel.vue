@@ -470,7 +470,7 @@
                 this.onResize();
             },
             currentSlide(newSlide) {
-                this.activeIndex = newSlide;
+                this.changeSlide(newSlide);
             }
         }
 
