@@ -392,11 +392,13 @@
             next() {
                 this.direction = "right";
                 this.activeIndex = this.nextSlide;
+                this.$emit("change", this.activeIndex);
             },
 
             prev() {
                 this.direction = "left";
                 this.activeIndex = this.prevSlide;
+                this.$emit("change", this.activeIndex);
             },
 
             changeSlide(index) {
