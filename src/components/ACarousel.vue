@@ -342,6 +342,10 @@
             if (this.autoplay) {
                 this.changeInterval = setInterval(this.next, this.autoplayInterval);
             }
+            
+            if (typeof this.currentSlide !== "undefined" && !isNaN(this.currentSlide)) {
+                this.activeIndex = this.currentSlide;
+            }
         },
 
         mounted() {
