@@ -97,6 +97,14 @@
 
         props: {
             /**
+             * You can control of active slide by passing its index
+             * to slider and handling changeEvent
+             */
+            currentSlide: {
+                type: Number,
+                default: 0
+            },
+            /**
              * You can pass array of URL in here
              * in case you don't need any HTML content
              * inside slides
@@ -399,6 +407,7 @@
                 }
 
                 this.activeIndex = index;
+                this.$emit("change", index);
             },
 
             onResize() {
@@ -459,6 +468,9 @@
             },
             adjustable() {
                 this.onResize();
+            },
+            currentSlide(newSlide) {
+                this.activeIndex = newSlide;
             }
         }
 
