@@ -22,7 +22,7 @@
         <section class="sandbox">
             <h2>Sandbox</h2>
             <div>
-                <a-carousel v-bind="data"></a-carousel>
+                <a-carousel v-bind="data" @change="handleChange"></a-carousel>
             </div>
             <div class="slider-option-container">
                 <div>
@@ -39,14 +39,14 @@
                 </div>
             </div>
             <div class="slider-option-container">
-                <label for="#animation">Animation:</label>
+                <label for="animation">Animation:</label>
                 <select id="animation" v-model="options.animation">
                     <option selected>slide</option>
                     <option>fade</option>
                 </select>
             </div>
             <div class="slider-option-container">
-                <label for="#duration">Animation duration:</label>
+                <label for="duration">Animation duration:</label>
                 <select id="duration" v-model.number="options.duration">
                     <option :value="500">500ms</option>
                     <option :value="800">800ms</option>
@@ -56,19 +56,19 @@
                 </select>
             </div>
             <div class="slider-option-container">
-                <label for="#direction">Animation have direction</label>
+                <label for="direction">Animation have direction</label>
                 <input id="direction" type="checkbox" v-model="options.directions" checked />
             </div>
             <div class="slider-option-container">
-                <label for="#adjustable">Adjustable</label>
+                <label for="adjustable">Adjustable</label>
                 <input id="adjustable" type="checkbox" v-model="options.adjustable" checked />
             </div>
             <div class="slider-option-container">
-                <label for="#navigation">Navigation</label>
+                <label for="navigation">Navigation</label>
                 <input id="navigation" type="checkbox" v-model="options.navigation" checked />
             </div>
             <div class="slider-option-container">
-                <label for="#thumbs">Thumbnails:</label>
+                <label for="thumbs">Thumbnails:</label>
                 <select id="thumbs" v-model="options.thumbnails">
                     <option value="" selected>No thumbnails</option>
                     <option>bottom</option>
@@ -76,7 +76,7 @@
                 </select>
             </div>
             <div class="slider-option-container">
-                <label for="#dots">Dots</label>
+                <label for="dots">Dots</label>
                 <input id="dots" type="checkbox" v-model="options.dots" checked />
             </div>
             <div class="slider-option-container">
@@ -88,23 +88,23 @@
                 <input id="dpos2" type="radio" name="dotsPos" v-model="options.dotsPos" value="underSlider" checked />
             </div>
             <div class="slider-option-container">
-                <label for="#ratio">Width : height ratio</label>
+                <label for="ratio">Width : height ratio</label>
                 <input id="ratio" type="text" v-model.number="options.ratio"/>
             </div>
             <div class="slider-option-container">
-                <label for="#min-h">Min height (px)</label>
+                <label for="min-h">Min height (px)</label>
                 <input id="min-h" type="text" v-model.number="options.minHeight"/>
             </div>
             <div class="slider-option-container">
-                <label for="#mmax-h">Max height (px)</label>
+                <label for="max-h">Max height (px)</label>
                 <input id="max-h" type="text" v-model.number="options.maxHeight"/>
             </div>
             <div class="slider-option-container">
-                <label for="#autoplay">Autoplay</label>
+                <label for="autoplay">Autoplay</label>
                 <input id="autoplay" type="checkbox" v-model="options.autoplay" checked />
             </div>
             <div class="slider-option-container">
-                <label for="#interval">Autoplay interval (ms)</label>
+                <label for="interval">Autoplay interval (ms)</label>
                 <input id="interval" type="text" v-model.number="options.autoplayInterval"/>
             </div>
         </section>
@@ -173,6 +173,10 @@
 
             removeInput(index) {
                 this.inputs.splice(index, 1);
+            },
+
+            handleChange(index) {
+                console.log("Change!", index);
             }
         }
 

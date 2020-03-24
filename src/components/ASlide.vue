@@ -58,7 +58,7 @@
             this.carousel.registerSlide(this.id, this.image, this.$refs.self, contentEl);
 
             // fix touch bug
-            this.$el.addEventListener("touchstart", (e) => e.preventDefault(), { passive: true });
+            this.$el.addEventListener("touchstart", (e) => e.preventDefault());
         },
 
         methods: {
