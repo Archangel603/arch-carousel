@@ -30,7 +30,10 @@ export function onSwipe(el, callback, options = null) {
 
         if (Math.abs(xDiff) > reqDelta || Math.abs(yDiff) > reqDelta) {
 
-            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            const hyp2 = xDiff * xDiff + yDiff * yDiff;
+            const cos = (hyp2 + xDiff * xDiff - yDiff * yDiff) / (2 * xDiff * Math.sqrt(hyp2));
+            
+            if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(cos) > 0.98) {
 
                 if (!options)
                     callback();
