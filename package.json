@@ -9,7 +9,7 @@
     "build-lib": "vue-cli-service build --target lib --name a-carousel ./src/index.js"
   },
   "dependencies": {
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "vue": "^2.5.17"
   },
   "main": "./dist/a-carousel.common.js",
